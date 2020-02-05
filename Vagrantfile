@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
     mv ApacheDirectoryStudio/ install/
     rm apache-directory-studio.tgz 
 
-    echo '/home/vagrant/install/anaconda/etc/profile.d/conda.sh' >> /home/vagrant/.bashrc 
+    echo 'source /home/vagrant/install/anaconda/etc/profile.d/conda.sh' >> /home/vagrant/.bashrc 
 
     chown vagrant:vagrant -R install
   SHELL
