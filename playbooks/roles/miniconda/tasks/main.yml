@@ -1,0 +1,29 @@
+---
+# tasks file for miniconda
+
+- name: Check if Anaconda is already installed
+  stat: 
+    path={{anaconda_install_dir}}/bin/conda
+  register: conda_binary
+  tags: ["anaconda"]
+
+- name: Download the Anaconda Installer
+  become: yes
+  get_url:
+    url={{anaconda_installer_url}}
+    dest=/tmp/{{anaconda_installer_sh}}
+    mode=0755
+  when: conda_binary.stat.exists == False
+  tags: ["anaconda"]
+
+- name: Install Anaconda (this may take some time)
+  become: yes
+  command: bash /tmp/{{anaconda_installer_sh}} -b -p {{anaconda_install_dir}}
+  when: conda_binary.stat.exists == False
+  tags: ["anaconda"]
+
+- name: Update Anaconda (this may take even more time)
+  become: yes
+  command: '{{ anaconda_install_dir }}/bin/conda update -y --all'
+  when: conda_binary.stat.exists == False
+  tags: ["anaconda"]

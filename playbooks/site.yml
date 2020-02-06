@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  connection: local
+
+  pre_tasks:
+  - name: Update apt cache
+    become: true
+    apt:
+      update_cache: yes
+
+  - name: Ugrade Ubuntu distribution
+    become: true
+    apt:
+      upgrade: dist
+
+  roles:
+    - ntp
+    - sys-tools
+    - editors
+    - dev-tools
+    - miniconda

@@ -1,0 +1,27 @@
+---
+# tasks file for editors
+- name: Install Emacs
+  become: true
+  apt:
+    name: emacs
+    state: present
+  tags:
+    - editors
+
+- name: Install Sublime Text
+  become: true
+  snap:
+    classic: yes
+    name:
+      - sublime-text
+  tags:
+    - editors
+
+- name: Install VS Code
+  become: true
+  snap:
+    classic: yes
+    name:
+      - code
+  tags:
+    - dev-tools

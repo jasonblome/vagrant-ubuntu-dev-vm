@@ -1,0 +1,22 @@
+---
+# tasks file for ntp
+
+- name: "Install Packages for NTP: {{ packages }}"
+  become: true
+  apt:
+    name: "{{ packages }}"
+    state: latest
+  tags: ntp
+
+- name: "Set the TimeZone to: {{ ntp_timezone }}"
+  become: true
+  timezone: 
+    name: "{{ ntp_timezone }}"
+  tags: ntp
+
+- name: "Restart NTP"
+  become: true
+  service:
+    name: ntp
+    state: restarted
+  tags: ntp

@@ -1,0 +1,38 @@
+---
+# tasks file for system tools
+
+- name: Install X11 components
+  become: true
+  apt:
+    name:
+      # X11 authorization libraries
+      - xauth
+      # Standard X11-based apps, useful for debugging when X11 isn't working
+      - x11-apps
+    state: present
+  tags:
+    - sys-tools
+
+- name: Install networking tools
+  become: true
+  apt:
+    name:
+      # user interface to the TELNET protocol
+      - telnet
+      # FTP application
+      - ftp
+      # non-interactive network downloader
+      - wget
+      # file compression utility
+      - bzip2
+      # client for the whois directory service
+      - whois
+      # BIND package containing utilities such as dig, nslookup, and host
+      - bind-utils
+      # network applications: arp, ifconfig, hostname, route, netstat
+      - net-tools
+    state: present
+  tags:
+    - sys-tools
+
+

@@ -1,0 +1,8 @@
+---
+# vars file for ntp
+
+ntp_timezone: America/New_York
+
+packages:
+  - ntp
+  - tzdata

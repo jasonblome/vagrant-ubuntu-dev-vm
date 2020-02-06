@@ -1,0 +1,15 @@
+---
+# vars file for miniconda
+
+anaconda_install_dir: '/home/vagrant/install/anaconda/'
+
+anaconda_mirror: 'https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh'
+anaconda_python_ver : '3'
+anaconda_ver : 'latest'
+anaconda_platform : 'Linux-x86_64'
+
+anaconda_name : 'Miniconda{{anaconda_python_ver}}-{{anaconda_ver}}-{{anaconda_platform}}'
+anaconda_installer_sh : '{{anaconda_name}}.sh'
+anaconda_installer_url : '{{anaconda_mirror}}/{{anaconda_installer_sh}}'
+
+
