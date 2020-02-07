@@ -24,6 +24,7 @@
   apt:
     name:
       - openjdk-8-jdk
+      - maven
     state: present
   tags:
     - dev-tools
