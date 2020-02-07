@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     # install ansible for the real provisioning steps
     apt-add-repository -y ppa:ansible/ansible
     apt update
-    apt install -y ansible
-    ansible-playbook -i /vagrant/playbooks/inventory /vagrant/playbooks/site.yml
+    apt install -y ansible aptitude
+    ansible-playbook -i /vagrant/ansible/inventory /vagrant/ansible/site.yml
   SHELL
 end

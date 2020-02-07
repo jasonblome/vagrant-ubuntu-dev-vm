@@ -11,7 +11,7 @@
   - name: Ugrade Ubuntu distribution
     become: true
     apt:
-      upgrade: dist
+      upgrade: full
 
   roles:
     - ntp

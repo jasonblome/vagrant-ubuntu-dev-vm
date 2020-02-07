@@ -3,7 +3,7 @@
 
 anaconda_install_dir: '/home/vagrant/install/anaconda/'
 
-anaconda_mirror: 'https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh'
+anaconda_mirror: 'https://repo.anaconda.com/miniconda'
 anaconda_python_ver : '3'
 anaconda_ver : 'latest'
 anaconda_platform : 'Linux-x86_64'

@@ -28,7 +28,7 @@
       # client for the whois directory service
       - whois
       # BIND package containing utilities such as dig, nslookup, and host
-      - bind-utils
+      - dnsutils
       # network applications: arp, ifconfig, hostname, route, netstat
       - net-tools
     state: present
