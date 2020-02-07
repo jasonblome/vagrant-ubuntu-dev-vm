@@ -1,0 +1,41 @@
+---
+# tasks file for editors
+- name: Install git
+  become: true
+  apt:
+    name:
+      - git
+    state: present
+  tags:
+    - dev-tools
+
+- name: Install gcc/g++ and manpages
+  become: true
+  apt:
+    name:
+      - build-essential
+      - manpages-dev
+    state: present
+  tags:
+    - dev-tools
+
+- name: Install the JDK
+  become: true
+  apt:
+    name:
+      - openjdk-8-jdk
+    state: present
+  tags:
+    - dev-tools
+
+- name: Install the JetBrains IDEs
+  become: true
+  snap:
+    classic: yes
+    name:
+      - datagrip
+      - intellij-idea-ultimate
+      - pycharm-professional
+  tags:
+    - dev-tools
+

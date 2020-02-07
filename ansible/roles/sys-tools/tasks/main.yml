@@ -17,6 +17,8 @@
   become: true
   apt:
     name:
+      # Utility for viewing directory tree structure
+      - tree
       # user interface to the TELNET protocol
       - telnet
       # FTP application

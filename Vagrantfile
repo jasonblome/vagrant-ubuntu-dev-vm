@@ -4,7 +4,8 @@
 Vagrant.configure("2") do |config|
   # ubuntu 18.04 configuration
   config.vm.box = "hashicorp/bionic64"
-
+  config.vm.hostname = "dev-box"
+  
   # setup X11 forwarding
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true

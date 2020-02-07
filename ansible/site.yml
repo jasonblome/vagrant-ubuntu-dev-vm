@@ -14,8 +14,8 @@
       upgrade: full
 
   roles:
+    - dev-tools
+    - editors
+    - miniconda
     - ntp
     - sys-tools
-    - editors
-    - dev-tools
-    - miniconda
